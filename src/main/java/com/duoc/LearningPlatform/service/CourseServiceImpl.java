@@ -17,8 +17,7 @@ public class CourseServiceImpl implements ICourseService { //Aquí se define la 
     @Override
     public ArrayList<Course> obtenerCursosActivosOrdenados() {
         
-    ArrayList<Course> todos = new ArrayList<>();
-    courseRepository.findAll().forEach(todos::add);
+    ArrayList<Course> todos = new ArrayList<>(courseRepository.findAll());
     
     ArrayList<Course> activos = new ArrayList<>();
     
