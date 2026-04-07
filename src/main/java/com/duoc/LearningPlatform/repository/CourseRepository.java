@@ -1,8 +1,11 @@
-package com.duoc.LearningPlatform.repository;
+package com.duoc.learningplatform.repository;
 
-public class CourseRepository { //implementa las interfaces de repositorio
-                                // para interaccion con la base de datos
+import org.springframework.data.repository.CrudRepository;
 
-    
+import com.duoc.learningplatform.model.Course;
+
+public interface CourseRepository extends CrudRepository<Course, Long> {
+
+    Course findByNombre(String nombre); //Spring genera el SQL automáticamente 
 
 }
